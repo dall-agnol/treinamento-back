@@ -1,4 +1,5 @@
-const Post = require('../models/post');
+const Post = require('../models/image');
+const User = require('../models/user');
 const sendError = require('../utils/errors');
 const sendSuccess = require('../utils/success');
 
@@ -23,10 +24,20 @@ module.exports = {
     async getPostById(req, res) {
         try {
             const id = req.params.id;
+            console.log(id)
             const post = await Post.findById(id);
             return res.status(200).send(post);
         } catch (error) {
-            return res.status(400).sendError('buscar publicação', error);
+            return res.status(400).send(sendError('buscar publicação', error));
+        }
+    },
+    async getPostsById(req, res) {
+        try {
+            const id = req.params.id;
+            const user = await User.find({id: id});
+            return res.status(200).send(user);
+        } catch (error) {
+            return res.status(400).send(sendError('buscar publicações', error));
         }
     }
 }
