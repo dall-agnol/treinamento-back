@@ -1,7 +1,7 @@
 {
-  "name": "saude-backend",
+  "name": "treinamento-tj-back",
   "version": "1.0.0",
-  "description": "backend admin blog saude",
+  "description": "backend treinamento tj",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
