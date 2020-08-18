@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
-mongoose.connect('mongodb://localhost:27017/treinamento', {
+mongoose.connect('mongodb://localhost:27017/tj-treinamento', {
     useNewUrlParser: true,
     useFindAndModify: true,
     useUnifiedTopology: true
