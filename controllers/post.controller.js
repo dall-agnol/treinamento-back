@@ -13,10 +13,8 @@ module.exports = {
     },
     async getPosts(req, res) {
         try {
-            const username = req.body.username;
-            const user = await Post.find({});
-            const images = user.filter(u => u.username == username)
-            return res.status(200).send(images);
+            const data = await Post.find({});
+            return res.status(200).send(data);
         } catch (error) {
             return res.status(400).send(sendError('buscar publicações', error))
         }
@@ -35,7 +33,9 @@ module.exports = {
         try {
             const id = req.params.id;
             const user = await User.find({id: id});
-            return res.status(200).send(user);
+            const images = user.filter(u => u._id == id)
+
+            return res.status(200).send(images);
         } catch (error) {
             return res.status(400).send(sendError('buscar publicações', error));
         }
