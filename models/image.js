@@ -4,7 +4,7 @@ const schemaImage = new mongoose.Schema({
     image: {
         type: String
     },
-    username: {
+    id: {
         type: String
     },
     description: {
