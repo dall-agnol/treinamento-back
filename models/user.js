@@ -22,10 +22,8 @@ const schemaUsers = new mongoose.Schema({
     },
     photos: {
         type: Array,
+        id: ObjectId(),
         image: {
-            type: String
-        },
-        userName: {
             type: String
         },
         description: {

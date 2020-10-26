@@ -5,8 +5,11 @@ const sendSuccess = require('../utils/success');
 module.exports = {
     async createPost(req, res) {
         try {
-            const data = req.body;
-            const post = await Post.create(data);
+            const id = req.body.id;
+            const photo = req.body.foto;
+            const user = await User.findById(id)
+            user.photos.push(photo);
+            const post = await User.findByIdAndUpdate(id, photo, { new: true });
             return res.status(200).send(post);
         } catch (error) {
             return res.status(400).send(sendError('criar a publicação', error));
@@ -14,8 +17,9 @@ module.exports = {
     },
     async getPosts(req, res) {
         try {
-            const posts = await Post.find({});
-            return res.status(200).send(posts);
+            const id = req.body.id;
+            const user = await User.findById(id)
+            return res.status(200).send(user.photos);
         } catch (error) {
             return res.status(400).send(sendError('buscar publicações', error))
         }
