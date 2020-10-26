@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
     useFindAndModify: true,
     useUnifiedTopology: true
 }); */
-mongoose.connect('http://geonosis.mongodb.umbler.com:48738/tj-treinamento', {
+mongoose.connect(process.env.MONGODB_URI + '/tj-treinamento', {
     useNewUrlParser: true,
     useFindAndModify: true,
     useUnifiedTopology: true
