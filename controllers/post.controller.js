@@ -11,7 +11,7 @@ module.exports = {
             console.log('user: ', user);
             const data = {
                 img: req.body.photo,
-                description: req.body.descricao
+                description: req.body.description
             }
             user.photos.push(data);
             const post = await User.findByIdAndUpdate(id, user, { new: true });
