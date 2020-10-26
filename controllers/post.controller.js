@@ -37,7 +37,8 @@ module.exports = {
             const images = photos.filter(u => u.id == id)
             return res.status(200).send(images);
         } catch (error) {
-            return res.status(400).send(sendError('buscar publicações', error));
+            return res.status(400).send({id: req.params.id})
+            //return res.status(400).send(sendError('buscar publicações', error));
         }
     }
 }
