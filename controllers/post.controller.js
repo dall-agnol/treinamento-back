@@ -12,8 +12,8 @@ module.exports = {
                 img: photo,
                 id: new ObjectId()
             }
-            user.photos.push(photo);
-            const post = await User.findByIdAndUpdate(id, photo, { new: true });
+            user.photos.push(data);
+            const post = await User.findByIdAndUpdate(id, user, { new: true });
             return res.status(200).send(post);
         } catch (error) {
             return res.status(400).send(sendError('criar a publicação', error));
