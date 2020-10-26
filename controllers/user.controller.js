@@ -35,7 +35,7 @@ module.exports = {
         try {
             const id = req.params.id;
             const data = req.body;
-            const file = await User.findByIdAndUpdate(id, data, { new: true});
+            const file = await User.findByIdAndUpdate(id, data, { new: true });
             return res.status(200).send(file);
         } catch (error) {
             return res.status(400).send(sendError('atualizar usuário', error))
@@ -51,9 +51,10 @@ module.exports = {
             const user = await User.find(params);
             console.log(user)
             if (user && user.length) {
-                return res.status(200).send({data: user[0]});
+                user[0].password = null;
+                return res.status(200).send({ data: user[0] });
             }
-                return res.status(400).send({data: null})
+            return res.status(400).send({ data: null })
         } catch (error) {
             return res.status(500).send(sendError('fazer login', error));
         }

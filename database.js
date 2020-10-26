@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose');
 const uri = "mongodb+srv://dallagnol:pedepano10@cluster0.dkjhj.mongodb.net/tj-treinamento?retryWrites=true&w=majority";
 
