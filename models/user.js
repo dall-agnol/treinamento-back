@@ -25,9 +25,9 @@ const schemaUsers = new mongoose.Schema({
         type: Array,
         id: {
             type: String,
-            default: shortid.generate()
+            default: shortid.generate(),
         },
-        image: {
+        img: {
             type: String
         },
         description: {

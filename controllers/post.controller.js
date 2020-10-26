@@ -6,11 +6,12 @@ module.exports = {
     async createPost(req, res) {
         try {
             const id = req.body.id;
-            const photo = req.body.foto;
-            const user = await User.findById(id)
+            console.log('params: ', req.body);
+            const user = await User.findById(id);
+            console.log('user: ', user);
             const data = {
-                img: photo,
-                id: new ObjectId()
+                img: req.body.photo,
+                description: req.body.descricao
             }
             user.photos.push(data);
             const post = await User.findByIdAndUpdate(id, user, { new: true });
