@@ -36,6 +36,7 @@ module.exports = {
             const id = req.params.id;
             const data = req.body;
             const file = await User.findByIdAndUpdate(id, data, { new: true });
+            file.password = undefined;
             return res.status(200).send(file);
         } catch (error) {
             return res.status(400).send(sendError('atualizar usuário', error))
