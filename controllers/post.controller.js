@@ -32,7 +32,7 @@ module.exports = {
     async getPostsById(req, res) {
         try {
             const id = req.params.id;
-            const user = await User.find({id: id});
+            const user = await Post.find({});
             const images = user.filter(u => u._id == id)
 
             return res.status(200).send(images);
