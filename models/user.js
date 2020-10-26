@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Photo = require('./image');
+const shortid = require('shortid');
 
 const schemaUsers = new mongoose.Schema({
     name: {
@@ -22,7 +23,10 @@ const schemaUsers = new mongoose.Schema({
     },
     photos: {
         type: Array,
-        id: ObjectId(),
+        id: {
+            type: String,
+            default: shortid.generate()
+        },
         image: {
             type: String
         },

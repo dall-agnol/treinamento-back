@@ -8,6 +8,10 @@ module.exports = {
             const id = req.body.id;
             const photo = req.body.foto;
             const user = await User.findById(id)
+            const data = {
+                img: photo,
+                id: new ObjectId()
+            }
             user.photos.push(photo);
             const post = await User.findByIdAndUpdate(id, photo, { new: true });
             return res.status(200).send(post);
