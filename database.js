@@ -1,11 +1,10 @@
 require('dotenv-safe').load();
 
 const mongoose = require('mongoose');
-console.log('mongo', process.env.MONGODB_URI)
-const DB_URI = process.env.MONGODB_URI;
+const uri = "mongodb+srv://dallagnol:pedepano10@cluster0.dkjhj.mongodb.net/tj-treinamento?retryWrites=true&w=majority";
 
 const connect = () => {
-    mongoose.connect(DB_URI, {
+    mongoose.connect(uri, {
         useNewUrlParser: true,
         useFindAndModify: true,
         useUnifiedTopology: true
