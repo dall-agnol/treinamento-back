@@ -51,7 +51,7 @@ module.exports = {
             const user = await User.find(params);
             console.log(user)
             if (user && user.length) {
-                user[0].password = null;
+                user[0].password = undefined;
                 return res.status(200).send({ data: user[0] });
             }
             return res.status(400).send({ data: null })
