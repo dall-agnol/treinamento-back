@@ -20,23 +20,6 @@ const schemaUsers = new mongoose.Schema({
     },
     imageUser: {
         type: String
-    },
-    photos: {
-        type: Array,
-        id: {
-            type: String,
-            default: shortid.generate(),
-        },
-        img: {
-            type: String
-        },
-        description: {
-            type: String
-        },
-        createAt: {
-            type: Date,
-            default: Date.now
-        }
     }
 });
 module.exports = mongoose.model('Users', schemaUsers);

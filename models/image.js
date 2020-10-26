@@ -4,13 +4,13 @@ const schemaImage = new mongoose.Schema({
     image: {
         type: String
     },
-    userName: {
+    username: {
         type: String
     },
     description: {
         type: String
     },
-    createAt: {
+    createdAt: {
         type: Date,
         default: Date.now
     }
