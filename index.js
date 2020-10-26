@@ -4,7 +4,6 @@ const routes = require('./routes');
 const bodyParser = require('body-parser')
 const app = express();
 const database = require('./database');
-require('dotenv-safe').load();
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
