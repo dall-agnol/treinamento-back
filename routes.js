@@ -13,6 +13,7 @@ routes.get('/post/:id', postController.getPostById);
 //USERS
 routes.post('/register', userController.createUser)
 routes.post('/login', userController.login);
+routes.get('/getAllUsers', userController.getUsers);
 routes.put('/login/:id', userController.updateUser);
 routes.get('/user/:id', userController.getUserById);
 
