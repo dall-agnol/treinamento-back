@@ -33,7 +33,7 @@ module.exports = {
         try {
             const id = req.params.id;
             const photos = await Post.find({});
-            console.log('images: ', user)
+            console.log('images: ', photos)
             const images = photos.filter(u => u.id == id)
             return res.status(200).send(images);
         } catch (error) {
