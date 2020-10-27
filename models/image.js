@@ -7,6 +7,12 @@ const schemaImage = new mongoose.Schema({
     id: {
         type: String
     },
+    username: {
+        type: String
+    },
+    userimage: {
+        type: String
+    },
     description: {
         type: String
     },

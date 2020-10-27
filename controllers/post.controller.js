@@ -1,4 +1,5 @@
 const Post = require('../models/image');
+const User = require('../models/user');
 const sendError = require('../utils/errors');
 const sendSuccess = require('../utils/success');
 
